@@ -1,3 +1,5 @@
 ROLES=('admin','analyst','viewer')
 REPORT_STATUSES=('queued','running','completed','failed')
 GROUPS=('control','intervention')
+CALC_STATUSES=('queued','running','available','failed')
+ACTUAL_GROUPS=('actual_control','actual_intervention')

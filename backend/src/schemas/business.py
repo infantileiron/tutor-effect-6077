@@ -19,6 +19,16 @@ class PlanInput(BaseModel):
     campus:str=Field(default='全部',max_length=50)
     exclude_absent:bool=True
     description:str=Field(default='',max_length=2000)
+    obs_start:str=Field(default='',max_length=40)
+    obs_end:str=Field(default='',max_length=40)
+    threshold_minutes:int=Field(default=240,ge=1,le=100000)
+class CheckinInput(BaseModel):
+    student_code:str=Field(min_length=1,max_length=50)
+    start_at:str=Field(min_length=1,max_length=40)
+    end_at:str=Field(min_length=1,max_length=40)
+    note:str=Field(default='',max_length=200)
+class CalculationInput(BaseModel):
+    plan_id:int=Field(gt=0)
 class RunInput(BaseModel):
     plan_id:int=Field(gt=0)
 class ConclusionInput(BaseModel):
